@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Online Quiz</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <!-- Link fontawesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="./style/style.css" />
+  <style>
+    .active {
+      background: #007bff;
+      color: white;
+    }
+
+    .disabled {
+      pointer-events: none;
+      background: gray;
+    }
+
+    .password-field {
+      position: relative;
+    }
+
+    .password-field input {
+      padding-right: 50px;
+    }
+
+    .fa-eye,
+    .fa-eye-slash {
+      position: absolute;
+      color: black;
+      right: 20px;
+      bottom: 10px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body class="bg-dark text-light">
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container header">
+        <a class="navbar-brand" href="https://nguyentamlong.github.io/ANDROID/Pages/" target="_blank" id="logo">Online Quiz
+          <i class="fas fa-graduation-cap"></i>
+        </a>
+        <a href="./index.html">
+          Question management <i class="fas fa-2x fa-scroll"></i></a>
+      </div>
+    </nav>
+  </header>
+  <button class="btn btn-success btnAdd" title="Post user/Thêm người dùng">
+    Post
+    <i class="fas fa-2x fa-user-plus"></i>
+  </button>
+  <!-- FORM  -->
+  <div class="form container bg-dark text-light">
+    <form>
+      <h2 class="text-center">Register User</h2>
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" class="form-control" id="username" required placeholder="Enter username" />
+        <div class="errorUsername text-danger"></div>
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" class="form-control" id="email" required placeholder="Enter email" />
+        <div class="errorEmail text-danger"></div>
+      </div>
+      <div class="form-group password-field">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" id="password" required placeholder="Enter password">
+        <i class="fa fa-eye" aria-hidden="true"></i>
+        <i class="fa fa-eye-slash" aria-hidden="true"></i>
+        </input>
+      </div>
+      <div class="form-group">
+        <label for="phonenumber">Phonenumber</label>
+        <input type="text" class="form-control" id="phonenumber" placeholder="Enter phonenumber" />
+      </div>
+  </div>
+  </form>
+  <div class="text-center">
+    <button type="submit" class="btn btn-success submitBtn" style="margin-top: -200px;">Submit</button>
+  </div>
+  </div>
+  <!-- ***************** -->
+
+  <h1 class="container text-center" style="margin-top: 300px;">Online Quiz Admin</h1>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 mb-1">
+        <b>Total:
+          <span class="badge bg-primary text-light ml-2 mr-4 totalSpan"></span></b>
+        <button class="btn btn-success getAll float-right">All</button>
+      </div>
+      <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 mb-1 d-flex">
+        <input class="form-control" id="myInput" type="text" placeholder="Search.." />
+        <button type="button" class="btn btn-outline-info ml-2">
+          <i class="fas fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+  </div>
+  <!-- Table -->
+  <div class="container table-responsive py-5">
+    <table class="table table-hover table-light table-striped table-bordered">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">User Id</th>
+          <th scope="col">Username</th>
+          <th scope="col">Email</th>
+          <th scope="col">Password</th>
+          <th scope="col">Phonenumber</th>
+          <th scope="col">Created At</th>
+          <th scope="col">Updated At</th>
+          <th scope="col">Update/Delete</th>
+        </tr>
+      </thead>
+      <tbody id="myTable"></tbody>
+    </table>
+  </div>
+  <!-- //Paging
+  <div class="container paging">
+    <nav aria-label="Page navigation example">
+      <ul class="pagination">
+        <li class="prev">
+          <a class="page-link" href="#">Previous</a>
+        </li>
+        <div class="pages d-flex"></div>
+        <li class="next"><a class="page-link" href="#">Next</a></li>
+      </ul>
+    </nav>
+  </div> -->
+</body>
+<script src="./script_user/main.js"></script>
+<script src="./script_user/search.js"></script>
+<script src="./script_user/delete.js"></script>
+<script src="./script_user/post.js"></script>
+<script src="./script_user/update.js"></script>
+
+</html>

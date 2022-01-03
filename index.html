@@ -1,247 +1,169 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Online Quiz</title>
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-    />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <!-- Link fontawesome -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-      integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <link rel="stylesheet" href="./style/style.css" />
-    <style>
-      .active {
-        background: #007bff;
-        color: white;
-      }
-      .disabled {
-        pointer-events: none;
-        background: gray;
-      }
-    </style>
-  </head>
-  <body>
-    <header>
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container header">
-          <a
-            class="navbar-brand"
-            href="https://nguyentamlong.github.io/ANDROID/Pages/"
-            target="_blank"
-            id="logo"
-            >Online Quiz
-            <i class="fas fa-graduation-cap"></i>
-          </a>
-        </div>
-      </nav>
-    </header>
-    <button class="btn btn-success btnAdd" title="Post question/Đăng câu hỏi">
-      Post
-      <i class="fas fa-plus-circle"></i>
-      <i class="fas fa-2x fa-question-circle"></i>
-    </button>
-    <!-- FORM  -->
-    <div class="form container bg-dark text-light">
-      <form>
-        <h2 class="text-center">Post Question</h2>
-        <div class="form-group">
-          <label for="topic">Topic</label>
-          <input
-            type="text"
-            class="form-control"
-            id="topic"
-            placeholder="Enter topic"
-          />
-          <small id="topicHelp" class="form-text text-muted"
-            >*First letter should be capitalized (Ex: Family,Noun,...)</small
-          >
-        </div>
-        <div class="form-group">
-          <label for="question">Question</label>
-          <input
-            type="text"
-            class="form-control"
-            id="question"
-            placeholder="Enter question"
-          />
-        </div>
-        <div class="form-group">
-          <label for="answer1">Answer 1</label>
-          <input
-            type="text"
-            class="form-control"
-            id="answer1"
-            placeholder="Enter answer1"
-          />
-          <small id="questionHelp" class="form-text text-warning"
-            >* required field</small
-          >
-        </div>
-        <div class="form-group">
-          <label for="answer2">Answer 2</label>
-          <input
-            type="text"
-            class="form-control"
-            id="answer2"
-            placeholder="Enter answer2"
-          />
-          <small id="questionHelp" class="form-text text-warning"
-            >* required field</small
-          >
-        </div>
-        <div class="form-group">
-          <label for="answer3">Answer 3</label>
-          <input
-            type="text"
-            class="form-control"
-            id="answer3"
-            placeholder="Enter answer3"
-          />
-        </div>
-        <div class="form-group">
-          <label for="answer4">Answer 4</label>
-          <input
-            type="text"
-            class="form-control"
-            id="answer4"
-            placeholder="Enter answer4"
-          />
-        </div>
-        <!-- correct answer -->
-        <h3 class="text-center">Set correct answer</h3>
-        <div class="d-flex justify-content-center">
-          <div class="form-check ml-2 mr-2">
-            <input
-              class="form-check-input"
-              type="radio"
-              value="A"
-              name="correctAnswer"
-              id="a"
-            />
-            <label class="form-check-label" for="a"> A </label>
-          </div>
-          <div class="form-check ml-2 mr-2">
-            <input
-              class="form-check-input"
-              type="radio"
-              value="B"
-              name="correctAnswer"
-              id="b"
-            />
-            <label class="form-check-label" for="b"> B </label>
-          </div>
-          <div class="form-check ml-2 mr-2">
-            <input
-              class="form-check-input"
-              type="radio"
-              value="C"
-              name="correctAnswer"
-              id="c"
-            />
-            <label class="form-check-label" for="c"> C </label>
-          </div>
-          <div class="form-check ml-2 mr-2">
-            <input
-              class="form-check-input"
-              type="radio"
-              value="D"
-              name="correctAnswer"
-              id="d"
-            />
-            <label class="form-check-label" for="d"> D </label>
-          </div>
-        </div>
-      </form>
-      <div class="text-center">
-        <button type="submit" class="btn btn-success submitBtn">Submit</button>
-      </div>
-    </div>
-    <!-- ***************** -->
 
-    <h1 class="container text-center">Online Quiz Admin</h1>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Online Quiz</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <!-- Link fontawesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="./style/style.css" />
+  <style>
+    .active {
+      background: #007bff;
+      color: white;
+    }
 
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 mb-2">
-          <b
-            >Total:
-            <span
-              class="badge bg-primary text-light ml-2 mr-4 sumQuestion"
-            ></span
-          ></b>
-          <b class="hoverTopic"
-            >Total number of topics:
-            <span class="badge bg-success text-light ml-2 mr-4 sumTopic"></span>
-            <ul class="topicName"></ul>
-          </b>
+    .disabled {
+      pointer-events: none;
+      background: gray;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container header">
+        <a class="navbar-brand" href="https://nguyentamlong.github.io/ANDROID/Pages/" target="_blank" id="logo">Online Quiz
+          <i class="fas fa-graduation-cap"></i>
+        </a>
+        <a href="./user-management.html">
+          User management <i class="fas fa-2x fa-users-cog"></i></a>
+      </div>
+    </nav>
+  </header>
+  <button class="btn btn-success btnAdd" title="Post question/Đăng câu hỏi">
+    Post
+    <i class="fas fa-plus-circle"></i>
+    <i class="fas fa-2x fa-question-circle"></i>
+  </button>
+  <!-- FORM  -->
+  <div class="form container bg-dark text-light">
+    <form>
+      <h2 class="text-center">Post Question</h2>
+      <div class="form-group">
+        <label for="topic">Topic</label>
+        <input type="text" class="form-control" id="topic" placeholder="Enter topic" />
+        <small id="topicHelp" class="form-text text-muted">*First letter should be capitalized (Ex: Family,Noun,...)</small>
+      </div>
+      <div class="form-group">
+        <label for="question">Question</label>
+        <input type="text" class="form-control" id="question" placeholder="Enter question" />
+      </div>
+      <div class="form-group">
+        <label for="answer1">Answer 1</label>
+        <input type="text" class="form-control" id="answer1" placeholder="Enter answer1" />
+        <small id="questionHelp" class="form-text text-warning">* required field</small>
+      </div>
+      <div class="form-group">
+        <label for="answer2">Answer 2</label>
+        <input type="text" class="form-control" id="answer2" placeholder="Enter answer2" />
+        <small id="questionHelp" class="form-text text-warning">* required field</small>
+      </div>
+      <div class="form-group">
+        <label for="answer3">Answer 3</label>
+        <input type="text" class="form-control" id="answer3" placeholder="Enter answer3" />
+      </div>
+      <div class="form-group">
+        <label for="answer4">Answer 4</label>
+        <input type="text" class="form-control" id="answer4" placeholder="Enter answer4" />
+      </div>
+      <!-- correct answer -->
+      <h3 class="text-center">Set correct answer</h3>
+      <div class="d-flex justify-content-center">
+        <div class="form-check ml-2 mr-2">
+          <input class="form-check-input" type="radio" value="A" name="correctAnswer" id="a" />
+          <label class="form-check-label" for="a"> A </label>
         </div>
-        <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 mb-2">
-          <select class="form-control selectCategory"></select>
+        <div class="form-check ml-2 mr-2">
+          <input class="form-check-input" type="radio" value="B" name="correctAnswer" id="b" />
+          <label class="form-check-label" for="b"> B </label>
         </div>
-        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 mb-2 d-flex">
-          <input
-            class="form-control"
-            id="myInput"
-            type="text"
-            placeholder="Search.."
-          />
-          <button type="button" class="btn btn-outline-info ml-2">
-            <i class="fas fa-search"></i>
-          </button>
+        <div class="form-check ml-2 mr-2">
+          <input class="form-check-input" type="radio" value="C" name="correctAnswer" id="c" />
+          <label class="form-check-label" for="c"> C </label>
+        </div>
+        <div class="form-check ml-2 mr-2">
+          <input class="form-check-input" type="radio" value="D" name="correctAnswer" id="d" />
+          <label class="form-check-label" for="d"> D </label>
         </div>
       </div>
-      <div class="row">
-        <span class="totalInTopic"></span>
+    </form>
+    <div class="text-center">
+      <button type="submit" class="btn btn-success submitBtn">Submit</button>
+    </div>
+  </div>
+  <!-- ***************** -->
+
+  <h1 class="container text-center">Online Quiz Admin</h1>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 mb-1">
+        <b>Total:
+          <span class="badge bg-primary text-light ml-2 mr-4 sumQuestion"></span></b>
+        <b class="hoverTopic">Total number of topics:
+          <span class="badge bg-success text-light ml-2 mr-4 sumTopic"></span>
+          <ul class="topicName"></ul>
+        </b>
+      </div>
+      <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 mb-1">
+        <select class="form-control selectCategory"></select>
+      </div>
+      <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 mb-1 d-flex">
+        <input class="form-control" id="myInput" type="text" placeholder="Search.." />
+        <button type="button" class="btn btn-outline-info ml-2">
+          <i class="fas fa-search"></i>
+        </button>
       </div>
     </div>
-    <!-- Table -->
-    <div class="container table-responsive py-5">
-      <table class="table table-hover table-dark table-striped table-bordered">
-        <thead>
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">Topic</th>
-            <th scope="col">Question</th>
-            <th scope="col">Answer 1 (A)</th>
-            <th scope="col">Answer 2 (B)</th>
-            <th scope="col">Answer 3 (C)</th>
-            <th scope="col">Answer 4 (D)</th>
-            <th scope="col">Correct</th>
-            <th scope="col">Update/Delete</th>
-          </tr>
-        </thead>
-        <tbody id="myTable"></tbody>
-      </table>
+    <div class="row">
+      <span class="totalInTopic"></span>
     </div>
-    <!-- Paging -->
-    <div class="container paging">
-      <nav aria-label="Page navigation example">
-        <ul class="pagination">
-          <li class="prev">
-            <a class="page-link" href="#">Previous</a>
-          </li>
-          <div class="pages d-flex"></div>
-          <li class="next"><a class="page-link" href="#">Next</a></li>
-        </ul>
-      </nav>
-    </div>
-  </body>
-  <script src="./script/post.js"></script>
-  <script src="./script/main.js"></script>
-  <script src="./script/update.js"></script>
-  <script src="./script/delete.js"></script>
-  <script src="./script/search.js"></script>
-  <script src="./script/select.js"></script>
+  </div>
+  <!-- Table -->
+  <div class="container table-responsive py-5">
+    <table class="table table-hover table-dark table-striped table-bordered">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Topic</th>
+          <th scope="col">Question</th>
+          <th scope="col">Answer 1 (A)</th>
+          <th scope="col">Answer 2 (B)</th>
+          <th scope="col">Answer 3 (C)</th>
+          <th scope="col">Answer 4 (D)</th>
+          <th scope="col">Correct</th>
+          <th scope="col">Update/Delete</th>
+        </tr>
+      </thead>
+      <tbody id="myTable"></tbody>
+    </table>
+  </div>
+  <!-- Paging -->
+  <div class="container paging">
+    <nav aria-label="Page navigation example">
+      <ul class="pagination">
+        <li class="prev">
+          <a class="page-link" href="#">Previous</a>
+        </li>
+        <div class="pages d-flex"></div>
+        <li class="next"><a class="page-link" href="#">Next</a></li>
+      </ul>
+    </nav>
+  </div>
+</body>
+<script src="./script/post.js"></script>
+<script src="./script/main.js"></script>
+<script src="./script/update.js"></script>
+<script src="./script/delete.js"></script>
+<script src="./script/search.js"></script>
+<script src="./script/select.js"></script>
+
 </html>
